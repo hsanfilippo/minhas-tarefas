@@ -27,6 +27,11 @@ const Tarefa = ({
     }
   }, [descricaoOriginal])
 
+  function cancelarEdicao() {
+    setEstaEditando(false)
+    setDescricao(descricaoOriginal)
+  }
+
   return (
     <S.Card>
       <S.Titulo>{titulo}</S.Titulo>
@@ -37,6 +42,7 @@ const Tarefa = ({
         {status}
       </S.Tag>
       <S.Descricao
+        disabled={!estaEditando}
         value={descricao}
         onChange={(e) => setDescricao(e.target.value)}
       />
@@ -44,7 +50,7 @@ const Tarefa = ({
         {estaEditando ? (
           <>
             <S.BotaoSalvar>Salvar</S.BotaoSalvar>
-            <S.BotaoCancelarRemover onClick={() => setEstaEditando(false)}>
+            <S.BotaoCancelarRemover onClick={cancelarEdicao}>
               Cancelar
             </S.BotaoCancelarRemover>
           </>
