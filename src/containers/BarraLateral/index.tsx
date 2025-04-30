@@ -51,7 +51,7 @@ const BarraLateral = () => {
             contador={4}
             legenda="Normal"
           />
-          <FiltroCard criterio="todas" ativo contador={5} legenda="Todas" />
+          <FiltroCard criterio="todas" contador={5} legenda="Todas" />
         </S.Filtros>
       </div>
     </S.Aside>
