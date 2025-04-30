@@ -24,34 +24,29 @@ const BarraLateral = () => {
           <FiltroCard
             valor={enums.Status.PENDENTE}
             criterio="status"
-            contador={0}
             legenda="Pendentes"
           />
           <FiltroCard
             valor={enums.Status.CONCLUIDA}
             criterio="status"
-            contador={1}
             legenda="Concluidas"
           />
           <FiltroCard
             valor={enums.Prioridade.URGENTE}
             criterio="prioridade"
-            contador={2}
             legenda="Urgentes"
           />
           <FiltroCard
             valor={enums.Prioridade.IMPORTANTE}
             criterio="prioridade"
-            contador={3}
             legenda="Importantes"
           />
           <FiltroCard
             valor={enums.Prioridade.NORMAL}
             criterio="prioridade"
-            contador={4}
             legenda="Normal"
           />
-          <FiltroCard criterio="todas" contador={5} legenda="Todas" />
+          <FiltroCard criterio="todas" legenda="Todas" />
         </S.Filtros>
       </div>
     </S.Aside>
