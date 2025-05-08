@@ -4,7 +4,8 @@ import FiltroCard from '../../components/FiltroCard'
 import { RootReducer } from '../../store'
 import { alterarTermo } from '../../store/reducers/filtro'
 
-import * as S from './styles'
+import { Aside, Filtros } from './styles'
+import { Campo } from '../../styles/index'
 import * as enums from '../../utils/enums/Tarefa'
 
 const BarraLateral = () => {
@@ -12,15 +13,15 @@ const BarraLateral = () => {
   const { termo } = useSelector((state: RootReducer) => state.filtro)
 
   return (
-    <S.Aside>
+    <Aside>
       <div>
-        <S.Campo
+        <Campo
           type="text"
           placeholder="Buscar"
           value={termo}
           onChange={(e) => dispatch(alterarTermo(e.target.value))}
         />
-        <S.Filtros>
+        <Filtros>
           <FiltroCard
             valor={enums.Status.PENDENTE}
             criterio="status"
@@ -47,9 +48,9 @@ const BarraLateral = () => {
             legenda="Normal"
           />
           <FiltroCard criterio="todas" legenda="Todas" />
-        </S.Filtros>
+        </Filtros>
       </div>
-    </S.Aside>
+    </Aside>
   )
 }
 
